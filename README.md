@@ -1,3 +1,6 @@
+**"This is a portfolio project for educational purposes."**
+* 이것은 교육 목적의 포트폴리오 프로젝트입니다.
+
 # 작업일지
 ## 4/13 
 베스트 셀러 슬라이드 작업 필요

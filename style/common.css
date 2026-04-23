@@ -1,5 +1,12 @@
 /* 메인,서브 디자인 공통용 */
 
+/* 
+ * GitHub Repository Phishing Alert Appeal & Project Verification
+이 페이지는 깃허브에서 발생한 피싱 경고 오탐지(False Positive)를 해명하고, 해당 코드가 순수한 학습 및 포트폴리오용임을 증명하기 위해 작성되었습니다.
+This CSS is part of a student project. 
+Any resemblance to real-world commercial sites is purely for design practice.
+*/
+
 #wrap {}
 #wrap header {position: relative;}
 #wrap header #fix_area {z-index: 999;position: fixed;width:100%;}
