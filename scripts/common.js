@@ -10,6 +10,58 @@
 
 
 /* ==========================================
+   #gnb - 스크롤 시 GNB 스타일 변경
+   ========================================== */
+
+(function () {
+    const gnb = document.querySelector('#gnb');
+    if (!gnb) return;
+    const logoImg     = gnb.querySelector('#logo img');
+    const serviceImgs = gnb.querySelectorAll('#user_service a img');
+const blackIcons = {
+    logo:   './images/common/Glossier-Logotype-black.png',
+    search: './images/common/search_bk_icon.png',
+    lang:   './images/common/language_bk_icon.png',
+    map:    './images/common/map_bk_icon.png',
+    person: './images/common/person_bk_icon.png',
+    cart:   './images/common/cart_off_bk_icon.png',
+};
+const originalLogoSrc = logoImg ? logoImg.getAttribute('src') : null;
+const originalServiceSrcs = Array.from(serviceImgs).map(img => img.getAttribute('src'));
+
+    const SCROLL_THRESHOLD = 200;
+const iconKeys = ['search', 'lang', 'map', 'person', 'cart']; // ← 바깥으로
+
+function applyScrolled(scrolled) {
+    gnb.classList.toggle('scrolled', scrolled);
+    if (scrolled) {
+        if (logoImg) logoImg.src = blackIcons.logo;
+        serviceImgs.forEach((img, i) => {
+            const key = iconKeys[i];
+            if (key && blackIcons[key]) img.src = blackIcons[key];
+        });
+    } else {
+        if (logoImg && originalLogoSrc) logoImg.src = originalLogoSrc;
+        serviceImgs.forEach((img, i) => {
+            if (originalServiceSrcs[i]) img.src = originalServiceSrcs[i];
+        });
+    };
+};
+;    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                applyScrolled(window.scrollY > SCROLL_THRESHOLD);
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    applyScrolled(window.scrollY > SCROLL_THRESHOLD);
+})();
+
+/* ==========================================
 #celeb_pick - CELEB's PICK Section JavaScript
    ============================================= */
 
@@ -132,4 +184,4 @@ document.querySelectorAll('.color_chip').forEach(function (chipWrap) {
             }
         });
     });
-}); 
+});
