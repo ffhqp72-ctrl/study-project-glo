@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>login | Glossier</title>
+    <link rel="shortcut icon" href="./images/common/favi.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/sign_up.css">
+    <script src="./scripts/sign_up.js" defer></script>
+
+</head>
+<body>
+    <div class="page">
+        <!-- Background -->
+        <div class="bg-img" aria-hidden="true">
+            <img src="./images/common/login_bg (2).png" alt="" />
+        </div>
+        <div class="bg-overlay" aria-hidden="true"></div>
+        <!-- Back button -->
+        <button class="back-btn" id="back-btn" aria-label="뒤로가기">
+            <img src="https://www.figma.com/api/mcp/asset/5c3fbae3-cf18-49b8-bd18-b98c3e13e3ca" alt="" />
+        </button>
+        <!-- Header -->
+        <div class="header">
+            <h1>Welcome Glossier</h1>
+        </div>
+        <!-- Input Fields -->
+        <div class="form-fields">
+            <!-- ID -->
+            <div class="input-row">
+                <input
+                    type="text"
+                    id="input-id"
+                    placeholder="ID (ex. email@gmail.com)"
+                    autocomplete="email"
+                />
+                <div class="input-icons">
+                    <span class="icon-clear" id="clear-id" role="button" aria-label="입력 지우기">
+                        <img src="https://www.figma.com/api/mcp/asset/b93cc59d-c34d-48b0-9452-ed032a82e326" alt="clear" />
+                    </span>
+                </div>
+            </div>
+            <!-- PW -->
+            <div class="input-row">
+                <input
+                    type="password"
+                    id="input-pw"
+                    placeholder="PW (영문/숫자/특수문자 포함 8자 이상)"
+                    autocomplete="new-password"
+                />
+                <div class="input-icons">
+                    <button class="icon-visibility" id="toggle-pw" aria-label="비밀번호 표시/숨기기" type="button">
+                        <img id="vis-icon" src="https://www.figma.com/api/mcp/asset/d255c51a-1919-4f6c-b15c-5b37cd379458" alt="visibility" />
+                    </button>
+                    <span class="icon-clear" id="clear-pw" role="button" aria-label="입력 지우기">
+                        <img src="https://www.figma.com/api/mcp/asset/b93cc59d-c34d-48b0-9452-ed032a82e326" alt="clear" />
+                    </span>
+                </div>
+            </div>
+            <!-- Phone number -->
+            <div class="input-row">
+                <input
+                    type="tel"
+                    id="input-phone"
+                    placeholder="Phone number"
+                    maxlength="13"
+                    autocomplete="tel"
+                />
+                <button class="btn-verify" id="btn-verify" type="button">인증하기</button>
+            </div>
+        </div>
+        <!-- Error + Sign up -->
+        <div class="form-actions">
+            <span class="error-msg" id="error-msg">*오류메세지</span>
+            <button class="btn-signup" id="btn-signup" type="button">Sign up</button>
+        </div>
+    </div>
+</body>
+</html>
